@@ -189,22 +189,32 @@ print("1. Withdrawal")
 print("2. Check balance")
 print("3. Deposit cash")
 print("4. Exit")
-choice= (input("enter your choice(1-4): "))
+
+choice = int(input("Enter your choice (1-4): "))
 
 def pick(selected_choice):
-      if(selected_choice==1):
-         print("Withdrawal")
-         amt1= int(input("Enter current amount: "))
-         amt2= int(input("Enter amount to be withdrawn: "))
-         return amt1 - amt2
-      elif(selected_choice==2):
-          print("Check balance")
-          print("your current balance is")
-          return amt1
-      elif(selected_choice==3):
-         print("Deposit cash")
-         amt1= int(input("Enter current amount: "))
-         amt2= int(input("Enter amount to be deposited: "))
-         return amt1 + amt2
-      elif(selected_choice==4):
-         print("Exit")
+    if selected_choice == 1:
+        print("Withdrawal")
+        amt1 = int(input("Enter current amount: "))
+        amt2 = int(input("Enter amount to be withdrawn: "))
+        return amt1 - amt2
+
+    elif selected_choice == 2:
+        print("Check balance")
+        amt1 = int(input("Enter current balance: "))
+        return amt1
+
+    elif selected_choice == 3:
+        print("Deposit cash")
+        amt1 = int(input("Enter current amount: "))
+        amt2 = int(input("Enter amount to be deposited: "))
+        return amt1 + amt2
+
+    elif selected_choice == 4:
+        return "Thank you for using the ATM."
+
+    else:
+        return "Invalid choice"
+
+result = pick(choice)
+print(result)
